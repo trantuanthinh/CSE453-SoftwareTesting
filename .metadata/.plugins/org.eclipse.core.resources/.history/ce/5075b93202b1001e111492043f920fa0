@@ -1,0 +1,16 @@
+package Exercise2;
+
+public class Snippet {
+	@Test
+		void testMainMethodExists() {
+			try {
+				Class<?> className = Class.forName("Quadrilateral");
+				Method mainMethod = className.getMethod("main", String[].class);
+			} catch (ClassNotFoundException e) {
+				assertTrue(false, "Class not found");
+			} catch (NoSuchMethodException e) {
+				assertTrue(false, "Main method not found");
+			}
+		}
+}
+

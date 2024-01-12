@@ -1,0 +1,21 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+class TriangleTest {
+	
+	@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	@DisplayName("Test Triangle With Valid Number")
+	void testValidNumber() {
+		String input1 = "3";
+		String input2 = "4";
+		String input3 = "5";
+	}
+	
+}

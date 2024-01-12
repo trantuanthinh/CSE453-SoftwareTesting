@@ -1,0 +1,15 @@
+public class Fibonacci {
+	
+	public static void main(String[] args) {
+		int n = 5 ;
+		System.out.println(String.valueOf(fib(n)));
+	}
+	
+	static public int fib(int n) {
+		switch (n) {
+			case 0: return 0;
+			case 1: return 1;
+			default: return (fib(n - 1) + fib(n - 2)) + 1;
+		}
+	}
+}

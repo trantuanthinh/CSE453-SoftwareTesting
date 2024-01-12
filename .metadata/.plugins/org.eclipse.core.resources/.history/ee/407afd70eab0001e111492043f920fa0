@@ -1,0 +1,14 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+class ContactManagerTest {
+
+	@Test
+	@DisplayName("Should Create Contact")
+	void test() {
+		fail("Not yet implemented");
+	}
+
+}
