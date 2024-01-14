@@ -1,0 +1,23 @@
+package Exercise5;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class Vector2DTest {
+
+	@Test
+	void testOrthogonalTo() {
+		int x = 10;
+		int y =15;
+		Point point1 = new Point(2, 4);
+		Point point2 = new Point(5, 10);
+		Vector2D vector = new Vector2D(point1, point2);
+
+		Point point3 = new Point(4, 8);
+		Point point4 = new Point(7, 14);
+		Line line2 = new Line(point3, point4);
+		assertTrue(line1.isSameLengthAs(line2));
+	}
+
+}

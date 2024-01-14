@@ -1,0 +1,18 @@
+package Exercise5;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import org.junit.jupiter.api.Test;
+
+import Exercise4.Fibonacci;
+
+class LineTest {
+
+	@Test
+	void testSameLength() {
+	}
+}
