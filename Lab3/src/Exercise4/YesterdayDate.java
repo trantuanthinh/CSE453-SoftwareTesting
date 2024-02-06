@@ -28,7 +28,7 @@ public class YesterdayDate {
 		yes_month = month;
 		yes_year = year;
 		if (day < 1 || day > 31) {
-			s1 = "Value of day, not in the range 1...31";
+			s1 = "Value of day, not in the range 1...31"; 
 			return s1;
 		}
 		if (month < 1 || month > 12) {
@@ -41,9 +41,10 @@ public class YesterdayDate {
 		}
 
 		if (year < 1800 || year > 2025) {
-			s1 = "value of year, not in the range 1800.......2025";
+			s1 = "value of year, not in the range 1800.......2025"; 
 			return s1;
 		}
+		//Already have case month = 2 below, this if block is not necessary
 		if (month == 2) {
 			if ((isleap(year) == 1) && day > 29) {
 				s1 = "invalid date input for leap year";
@@ -103,6 +104,7 @@ public class YesterdayDate {
 				yes_day = 28;
 				yes_month = 2;
 			}
+			//should put yes_month = 2; here
 			break;
 		}
 		s1 = "Previous Date is :" + yes_day + "-" + yes_month + "-" + yes_year;
