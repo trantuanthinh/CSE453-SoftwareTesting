@@ -49,22 +49,16 @@ public class Commission {
 		boolean c1;
 		boolean c2;
 		boolean c3;
-		c1 = (1 <= totalLocks) && (totalLocks <= 70);
-		c2 = (1 <= totalStocks) && (totalStocks < 80);
-		c3 = (1 <= totalBarrels) && (totalBarrels >= 90);
-		if (!c1 || !c2 || !c3)
-			commission = 0.0;
-		else {
-			if (sales > 1800) {
-				commission = 0.10 * 1000.0;
-				commission = commission + 0.15 * 800;
-				commission = commission + 0.20 * (sales - 1800.0);
-			} else if (sales > 1000) {
-				commission = 0.10 * 1000;
-				commission = commission + 0.15 * (sales - 1000);
-			} else
-				commission = 0.10 * sales;
-		}
+
+		if (sales > 1800) {
+			commission = 0.10 * 1000.0;
+			commission = commission + 0.15 * 800;
+			commission = commission + 0.20 * (sales - 1800.0);
+		} else if (sales > 1000) {
+			commission = 0.10 * 1000;
+			commission = commission + 0.15 * (sales - 1000);
+		} else
+			commission = 0.10 * sales;
 		return commission;
 	}
 }

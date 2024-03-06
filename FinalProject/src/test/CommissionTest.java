@@ -52,7 +52,8 @@ public class CommissionTest {
 			commission.setInput(locks, stocks, barrels);
 			double sale = commission.calSale();
 			double result = commission.calCommission(sale);
-			data[rowIndex] = new Object[] { count, locks, stocks, barrels, result };
+			String r = String.valueOf(result);
+			data[rowIndex] = new Object[] { count, locks, stocks, barrels, r };
 			count++;
 			rowIndex++;
 		}
