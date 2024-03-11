@@ -482,7 +482,7 @@ public class MainFrame extends javax.swing.JFrame {
 		this.minTriangle = 10;
 		this.maxTriangle = 220;
 		org.junit.runner.Result result = JUnitCore.runClasses(TriangleTest.class);
-		updateTables();
+		updateTriangleTables();
 	}
 
 	private void checkCommissionDefaultButtonActionPerformed(java.awt.event.ActionEvent evt) {
@@ -499,14 +499,14 @@ public class MainFrame extends javax.swing.JFrame {
 		this.maxStock = 70;
 		this.maxBarrel = 80;
 		org.junit.runner.Result result = JUnitCore.runClasses(CommissionTest.class);
-		updateTables();
+		updateRobustTables();
 	}
 
 	private void checkTriangleButtonActionPerformed(java.awt.event.ActionEvent evt) {
 		this.minTriangle = Integer.valueOf(minTriangleTextField.getText());
 		this.maxTriangle = Integer.valueOf(maxTriangleTextField.getText());
 		org.junit.runner.Result result = JUnitCore.runClasses(TriangleTest.class);
-		updateTables();
+		updateTriangleTables();
 	}
 
 	private void checkCommissionButtonActionPerformed(java.awt.event.ActionEvent evt) {
@@ -517,7 +517,7 @@ public class MainFrame extends javax.swing.JFrame {
 		this.maxStock = Integer.valueOf(maxStockCommissionTextField.getText());
 		this.maxBarrel = Integer.valueOf(maxBarrelCommissionTextField.getText());
 		org.junit.runner.Result result = JUnitCore.runClasses(CommissionTest.class);
-		updateTables();
+		updateRobustTables();
 	}
 
 	private void clearTriangleButtonActionPerformed(java.awt.event.ActionEvent evt) {
@@ -528,12 +528,12 @@ public class MainFrame extends javax.swing.JFrame {
 		clearTables();
 	}
 
-	private void updateTables() {
+	private void updateTriangleTables() {
 		DefaultTableModel tableNormalModel = new DefaultTableModel();
 		tableNormalModel.addColumn("Test case");
-		tableNormalModel.addColumn("A");
-		tableNormalModel.addColumn("B");
-		tableNormalModel.addColumn("C");
+		tableNormalModel.addColumn("Side 1");
+		tableNormalModel.addColumn("Side 2");
+		tableNormalModel.addColumn("Side 3");
 		tableNormalModel.addColumn("Expected Output");
 		for (Object[] row : normalTestData) {
 			tableNormalModel.addRow(row);
@@ -541,9 +541,9 @@ public class MainFrame extends javax.swing.JFrame {
 
 		DefaultTableModel tableRobustModel = new DefaultTableModel();
 		tableRobustModel.addColumn("Test case");
-		tableRobustModel.addColumn("A");
-		tableRobustModel.addColumn("B");
-		tableRobustModel.addColumn("C");
+		tableRobustModel.addColumn("Side 1");
+		tableRobustModel.addColumn("Side 2");
+		tableRobustModel.addColumn("Side 3");
 		tableRobustModel.addColumn("Expected Output");
 		for (Object[] row : robustTestData) {
 			tableRobustModel.addRow(row);
@@ -551,6 +551,31 @@ public class MainFrame extends javax.swing.JFrame {
 		normalTable.setModel(tableNormalModel);
 		robustTable.setModel(tableRobustModel);
 	}
+	
+	private void updateRobustTables() {
+		DefaultTableModel tableNormalModel = new DefaultTableModel();
+		tableNormalModel.addColumn("Test case");
+		tableNormalModel.addColumn("Lock");
+		tableNormalModel.addColumn("Stock");
+		tableNormalModel.addColumn("Barrel");
+		tableNormalModel.addColumn("Expected Output");
+		for (Object[] row : normalTestData) {
+			tableNormalModel.addRow(row);
+		}
+
+		DefaultTableModel tableRobustModel = new DefaultTableModel();
+		tableRobustModel.addColumn("Test case");
+		tableRobustModel.addColumn("Side 1");
+		tableRobustModel.addColumn("Side 2");
+		tableRobustModel.addColumn("Side 3");
+		tableRobustModel.addColumn("Expected Output");
+		for (Object[] row : robustTestData) {
+			tableRobustModel.addRow(row);
+		}
+		normalTable.setModel(tableNormalModel);
+		robustTable.setModel(tableRobustModel);
+	}
+
 
 	public void clearTables() {
 		DefaultTableModel defaultTableModel = new DefaultTableModel();
